@@ -5,5 +5,7 @@ LABEL Description="Docker image for OMNeT++ Network Simulator with custom inetma
 # Download inetmanet-3.x
 
 RUN cd /usr/omnetpp/omnetpp-5.2/samples && \
-    git clone --depth=1 --recursive https://github.com/michalciolek/inetmanet-3.x.git && \
-    rm -rf !$/.git
+    git clone --recursive https://github.com/michalciolek/inetmanet-3.x.git && \
+    cd inetmanet-3.x && \
+    git reset --hard ec78ef9a4c0d6af63faabaf17dc6ecfdba42770e && \
+    rm -rf .git showcases/.git tutorials/.git
